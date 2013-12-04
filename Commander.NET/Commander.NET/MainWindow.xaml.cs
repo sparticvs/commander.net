@@ -22,6 +22,31 @@ namespace Commander.NET
         public MainWindow()
         {
             InitializeComponent();
+
+            switchPanel.Children.Add(new SwitchPort());
+            switchPanel.Children.Add(new SwitchPort());
+            switchPanel.Children.Add(new SwitchPort());
+            switchPanel.Children.Add(new SwitchPort());
+            switchPanel.Children.Add(new SwitchPort());
+            switchPanel.Children.Add(new SwitchPort());
+            switchPanel.Children.Add(new SwitchPort());
+            switchPanel.Children.Add(new SwitchPort());
+            switchPanel.Children.Add(new SwitchPort());
+            switchPanel.Children.Add(new SwitchPort());
+            switchPanel.Children.Add(new SwitchPort());
+            switchPanel.Children.Add(new SwitchPort());
+            switchPanel.Children.Add(new SwitchPort());
+            switchPanel.Children.Add(new SwitchPort());
+            switchPanel.Children.Add(new SwitchPort());
+            switchPanel.Children.Add(new SwitchPort());
+            switchPanel.Children.Add(new SwitchPort());
+            switchPanel.Children.Add(new SwitchPort());
+            switchPanel.Children.Add(new SwitchPort());
+            switchPanel.Children.Add(new SwitchPort());
+            switchPanel.Children.Add(new SwitchPort());
+            switchPanel.Children.Add(new SwitchPort());
+            switchPanel.Children.Add(new SwitchPort());
+            switchPanel.Children.Add(new SwitchPort());
         }
     }
 }
