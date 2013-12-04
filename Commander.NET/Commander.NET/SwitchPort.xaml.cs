@@ -23,5 +23,16 @@ namespace Commander.NET
         {
             InitializeComponent();
         }
+
+        private void Rectangle_MouseRightButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            VlanSelector selector = new VlanSelector();
+            selector.Show();
+        }
+
+        private void Grid_ContextMenuOpening(object sender, ContextMenuEventArgs e)
+        {
+            e.Handled = true;
+        }
     }
 }

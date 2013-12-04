@@ -3,6 +3,11 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="Commander.NET" Height="120" Width="600">
     <Grid Name="switchGrid"  Background="#FF16365C">
-        <WrapPanel x:Name="switchPanel" HorizontalAlignment="Left" Width="592" Height="90" Grid.Row="2" Orientation="Vertical" Margin="0" Grid.Column="12" VerticalAlignment="Top"/>
+        <Grid.ContextMenu>
+            <ContextMenu>
+                <MenuItem Header="New VLAN"/>
+            </ContextMenu>
+        </Grid.ContextMenu>
+        <WrapPanel x:Name="switchPanel" HorizontalAlignment="Left" Width="592" Height="90" Orientation="Vertical" VerticalAlignment="Top"/>
     </Grid>
 </Window>

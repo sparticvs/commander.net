@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              mc:Ignorable="d" 
              d:DesignHeight="34" d:DesignWidth="42">
-    <Grid Margin="10,10,0,0">
-        <Rectangle Fill="#FFDEDEDE" HorizontalAlignment="Left" Height="24" VerticalAlignment="Top" Width="32"/>
+    <Grid Margin="10,10,0,0" ContextMenuOpening="Grid_ContextMenuOpening">
+        <Rectangle Fill="#FFDEDEDE" HorizontalAlignment="Left" Height="24" VerticalAlignment="Top" Width="32" MouseRightButtonUp="Rectangle_MouseRightButtonUp"/>
     </Grid>
 </UserControl>
