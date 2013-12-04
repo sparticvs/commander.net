@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?> 
+<switch name="Juniper EX3200-24" serial="" hostname="">
+  <name>Juniper EX3200-24</name>
+  <serial>123123123</serial>
+  <vlans>
+    <!-- Default "open" Identifier -->
+    <vlan name="Open" id="" color="#FFDEDEDE" />
+    <vlan name="WAN" id="*" color="#FF9900" />
+    <vlan name="Default-Trunk" id="1" color="#FF9900" />
+  </vlans>
+  <ports rows="2" cols="12" groups="2">
+    <port id="0" vlan-id="*">WAN Port to Router</port>
+    <port id="1" vlan-id=""></port>
+    <port id="2" vlan-id=""></port>
+    <port id="3" vlan-id=""></port>
+    <port id="4" vlan-id=""></port>
+    <port id="5" vlan-id=""></port>
+    <port id="6" vlan-id=""></port>
+    <port id="7" vlan-id=""></port>
+    <port id="8" vlan-id=""></port>
+    <port id="9" vlan-id=""></port>
+    <port id="10" vlan-id=""></port>
+    <port id="11" vlan-id=""></port>
+    <port id="12" vlan-id=""></port>
+    <port id="13" vlan-id=""></port>
+    <port id="14" vlan-id=""></port>
+    <port id="15" vlan-id=""></port>
+    <port id="16" vlan-id=""></port>
+    <port id="17" vlan-id=""></port>
+    <port id="18" vlan-id=""></port>
+    <port id="19" vlan-id=""></port>
+    <port id="20" vlan-id=""></port>
+    <port id="21" vlan-id=""></port>
+    <port id="22" vlan-id=""></port>
+    <port id="23" vlan-id=""></port>
+  </ports>
+</switch>
