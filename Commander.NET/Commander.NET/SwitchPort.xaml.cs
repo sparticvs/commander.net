@@ -19,20 +19,27 @@ namespace Commander.NET
     /// </summary>
     public partial class SwitchPort : UserControl
     {
-        public SwitchPort()
+        public SwitchPort(int portId)
         {
             InitializeComponent();
+            this.portId.Text = portId.ToString();
         }
 
         private void Rectangle_MouseRightButtonUp(object sender, MouseButtonEventArgs e)
         {
             VlanSelector selector = new VlanSelector();
+            selector.SetVlans(MainWindow.VLANS);
+            selector.OnSave += this.HandleSaveEvent;
             selector.Show();
         }
 
         private void Grid_ContextMenuOpening(object sender, ContextMenuEventArgs e)
         {
             e.Handled = true;
+        }
+
+        private void HandleSaveEvent(object sender, EventArgs e)
+        {
         }
     }
 }

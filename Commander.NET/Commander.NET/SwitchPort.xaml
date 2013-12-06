@@ -4,8 +4,10 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              mc:Ignorable="d" 
-             d:DesignHeight="34" d:DesignWidth="42">
-    <Grid Margin="10,10,0,0" ContextMenuOpening="Grid_ContextMenuOpening">
-        <Rectangle Fill="#FFDEDEDE" HorizontalAlignment="Left" Height="24" VerticalAlignment="Top" Width="32" MouseRightButtonUp="Rectangle_MouseRightButtonUp"/>
+             d:DesignHeight="42
+             " d:DesignWidth="42">
+    <Grid ContextMenuOpening="Grid_ContextMenuOpening">
+        <Rectangle Fill="#FFDEDEDE" HorizontalAlignment="Left" Height="24" VerticalAlignment="Top" Width="32" MouseRightButtonUp="Rectangle_MouseRightButtonUp" Margin="10,18,0,0"/>
+        <TextBlock x:Name="portId" HorizontalAlignment="Left" Margin="-2,0,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="18" Width="43" Foreground="White" TextAlignment="Center"/>
     </Grid>
 </UserControl>

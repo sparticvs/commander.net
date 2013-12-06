@@ -9,29 +9,29 @@
     <vlan name="Default-Trunk" id="1" color="#FF9900" />
   </vlans>
   <ports rows="2" cols="12" groups="2">
-    <port id="0" vlan-id="*">WAN Port to Router</port>
-    <port id="1" vlan-id=""></port>
-    <port id="2" vlan-id=""></port>
-    <port id="3" vlan-id=""></port>
-    <port id="4" vlan-id=""></port>
-    <port id="5" vlan-id=""></port>
-    <port id="6" vlan-id=""></port>
-    <port id="7" vlan-id=""></port>
-    <port id="8" vlan-id=""></port>
-    <port id="9" vlan-id=""></port>
-    <port id="10" vlan-id=""></port>
-    <port id="11" vlan-id=""></port>
-    <port id="12" vlan-id=""></port>
-    <port id="13" vlan-id=""></port>
-    <port id="14" vlan-id=""></port>
-    <port id="15" vlan-id=""></port>
-    <port id="16" vlan-id=""></port>
-    <port id="17" vlan-id=""></port>
-    <port id="18" vlan-id=""></port>
-    <port id="19" vlan-id=""></port>
-    <port id="20" vlan-id=""></port>
-    <port id="21" vlan-id=""></port>
-    <port id="22" vlan-id=""></port>
-    <port id="23" vlan-id=""></port>
+    <port id="0" vlans="*">WAN Port to Router</port>
+    <port id="1" vlans=""></port>
+    <port id="2" vlans=""></port>
+    <port id="3" vlans=""></port>
+    <port id="4" vlans=""></port>
+    <port id="5" vlans=""></port>
+    <port id="6" vlans=""></port>
+    <port id="7" vlans=""></port>
+    <port id="8" vlans=""></port>
+    <port id="9" vlans=""></port>
+    <port id="10" vlans=""></port>
+    <port id="11" vlans=""></port>
+    <port id="12" vlans=""></port>
+    <port id="13" vlans=""></port>
+    <port id="14" vlans=""></port>
+    <port id="15" vlans=""></port>
+    <port id="16" vlans=""></port>
+    <port id="17" vlans=""></port>
+    <port id="18" vlans=""></port>
+    <port id="19" vlans=""></port>
+    <port id="20" vlans=""></port>
+    <port id="21" vlans=""></port>
+    <port id="22" vlans=""></port>
+    <port id="23" vlans=""></port>
   </ports>
 </switch>

@@ -18,9 +18,27 @@ namespace Commander.NET
     /// </summary>
     public partial class VlanSelector : Window
     {
+        public EventHandler OnSave { get; set; }
+
         public VlanSelector()
         {
             InitializeComponent();
+        }
+
+        public void SetVlans(List<Vlan> vlans)
+        {
+            foreach (Vlan v in vlans)
+            {
+                this.vlanLB.Items.Add(string.Format("{0} :: VLAN{1}", v.Name, v.Id));
+            }
+        }
+
+        private void saveBtn_Click(object sender, RoutedEventArgs e)
+        {
+            if (this.OnSave != null)
+            {
+                this.OnSave(this, new EventArgs());
+            }
         }
     }
 }

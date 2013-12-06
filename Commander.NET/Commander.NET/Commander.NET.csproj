@@ -64,6 +64,8 @@
     <Compile Include="SwitchPort.xaml.cs">
       <DependentUpon>SwitchPort.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Vlan.cs" />
+    <Compile Include="VlanFactory.cs" />
     <Compile Include="VlanSelector.xaml.cs">
       <DependentUpon>VlanSelector.xaml</DependentUpon>
     </Compile>
