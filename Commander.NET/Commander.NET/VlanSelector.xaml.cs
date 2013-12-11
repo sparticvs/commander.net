@@ -18,6 +18,8 @@ namespace Commander.NET
     /// </summary>
     public partial class VlanSelector : Window
     {
+        // TODO: Name of VlanSelection should change to "Port Info" or something relating to the port
+
         public EventHandler<VlanSelectedEventArgs> OnSave { get; set; }
 
         public VlanSelector()
