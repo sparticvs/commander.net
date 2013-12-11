@@ -29,5 +29,11 @@ namespace Commander.NET
             }
             return port;
         }
+
+        public static Port buildPort(string sId, string sDetail)
+        {
+            int id = int.Parse(sId);
+            return PortBuilder.buildPort(id, null, sDetail);
+        }
     }
 }
