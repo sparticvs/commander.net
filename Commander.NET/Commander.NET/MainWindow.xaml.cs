@@ -11,6 +11,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Microsoft.Win32;
 
 namespace Commander.NET
 {
@@ -37,6 +38,33 @@ namespace Commander.NET
             for (int i = 0; i < 24; i++)
             {
                 switchPanel.Children.Add(new SwitchPort(i));
+            }
+        }
+
+        private void openConfig_Click(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog dlg = new OpenFileDialog();
+            dlg.DefaultExt = ".xml";
+            dlg.Filter = "XML config (.xml)|*.xml";
+            bool? result = dlg.ShowDialog();
+
+            if (result == true)
+            {
+                string filename = dlg.FileName;
+            }
+        }
+
+        private void saveConfig_Click(object sender, RoutedEventArgs e)
+        {
+            SaveFileDialog dlg = new SaveFileDialog();
+            dlg.FileName = "Untitled";
+            dlg.DefaultExt = ".xml";
+            dlg.Filter = "XML config (.xml)|*.xml";
+            bool? result = dlg.ShowDialog();
+
+            if (result == true)
+            {
+                string filename = dlg.FileName;
             }
         }
     }
