@@ -38,8 +38,16 @@ namespace Commander.NET
             e.Handled = true;
         }
 
-        private void HandleSaveEvent(object sender, EventArgs e)
+        private void HandleSaveEvent(object sender, VlanSelectedEventArgs e)
         {
+            if (e.Vlans.Count > 0)
+            {
+                this.portRect.Fill = new SolidColorBrush(e.Vlans[0].Color);
+            }
+            else
+            {
+                this.portRect.Fill = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FFDEDEDE"));
+            }
         }
     }
 }

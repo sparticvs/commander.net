@@ -24,13 +24,12 @@ namespace Commander.NET
         public MainWindow()
         {
             VLANS = new List<Vlan>();
-            VLANS.Add(VlanFactory.createVlan("Open", "-1", "gray"));
-            VLANS.Add(VlanFactory.createVlan("WAN", "0", "yellow"));
-            VLANS.Add(VlanFactory.createVlan("Default", "1", "orange"));
-            VLANS.Add(VlanFactory.createVlan("Internal", "2", "green"));
-            VLANS.Add(VlanFactory.createVlan("External", "3", "blue"));
-            VLANS.Add(VlanFactory.createVlan("DMZ", "4", "red"));
-            VLANS.Add(VlanFactory.createVlan("Management", "254", "purple"));
+            VLANS.Add(VlanFactory.createVlan("WAN", "0", "#FFC000"));
+            VLANS.Add(VlanFactory.createVlan("Default", "1", "#92D050"));
+            VLANS.Add(VlanFactory.createVlan("Internal", "2", "#00B0F0"));
+            VLANS.Add(VlanFactory.createVlan("External", "3", "brown"));
+            VLANS.Add(VlanFactory.createVlan("DMZ", "4", "#FF0000"));
+            VLANS.Add(VlanFactory.createVlan("Management", "254", "#E26B0A"));
 
             InitializeComponent();
 

@@ -18,7 +18,7 @@ namespace Commander.NET
     /// </summary>
     public partial class VlanSelector : Window
     {
-        public EventHandler OnSave { get; set; }
+        public EventHandler<VlanSelectedEventArgs> OnSave { get; set; }
 
         public VlanSelector()
         {
@@ -29,7 +29,7 @@ namespace Commander.NET
         {
             foreach (Vlan v in vlans)
             {
-                this.vlanLB.Items.Add(string.Format("{0} :: VLAN{1}", v.Name, v.Id));
+                this.vlanLB.Items.Add(v);
             }
         }
 
@@ -37,8 +37,15 @@ namespace Commander.NET
         {
             if (this.OnSave != null)
             {
-                this.OnSave(this, new EventArgs());
+                VlanSelectedEventArgs args = new VlanSelectedEventArgs();
+                foreach (Vlan v in this.vlanLB.SelectedItems)
+                {
+                    args.Vlans.Add(v);
+                }
+                this.OnSave(this, args);
             }
+
+            this.Close();
         }
     }
 }

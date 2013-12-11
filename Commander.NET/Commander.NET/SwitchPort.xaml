@@ -7,7 +7,7 @@
              d:DesignHeight="42
              " d:DesignWidth="42">
     <Grid ContextMenuOpening="Grid_ContextMenuOpening">
-        <Rectangle Fill="#FFDEDEDE" HorizontalAlignment="Left" Height="24" VerticalAlignment="Top" Width="32" MouseRightButtonUp="Rectangle_MouseRightButtonUp" Margin="10,18,0,0"/>
+        <Rectangle x:Name="portRect" Fill="#FFDEDEDE" HorizontalAlignment="Left" Height="24" VerticalAlignment="Top" Width="32" MouseRightButtonUp="Rectangle_MouseRightButtonUp" Margin="10,18,0,0"/>
         <TextBlock x:Name="portId" HorizontalAlignment="Left" Margin="-2,0,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="18" Width="43" Foreground="White" TextAlignment="Center"/>
     </Grid>
 </UserControl>

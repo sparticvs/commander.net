@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Windows.Media;
 
 namespace Commander.NET
 {
@@ -14,6 +14,11 @@ namespace Commander.NET
 
         public Vlan()
         {
+        }
+
+        public override string ToString()
+        {
+            return string.Format("{0} :: VLAN{1}", Name, Id);
         }
     }
 }

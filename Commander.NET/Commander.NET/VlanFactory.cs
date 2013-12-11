@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Drawing;
+using System.Windows.Media;
 
 namespace Commander.NET
 {
@@ -14,7 +14,7 @@ namespace Commander.NET
 
             vlan.Name = name;
             vlan.Id = int.Parse(id);
-            vlan.Color = (Color)ColorTranslator.FromHtml(color);
+            vlan.Color = (Color)ColorConverter.ConvertFromString(color);
 
             return vlan;
         }

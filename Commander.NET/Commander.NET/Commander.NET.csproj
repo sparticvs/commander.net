@@ -66,6 +66,7 @@
     </Compile>
     <Compile Include="Vlan.cs" />
     <Compile Include="VlanFactory.cs" />
+    <Compile Include="VlanSelectedEventArgs.cs" />
     <Compile Include="VlanSelector.xaml.cs">
       <DependentUpon>VlanSelector.xaml</DependentUpon>
     </Compile>
