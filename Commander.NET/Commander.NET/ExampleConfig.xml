@@ -1,14 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?> 
 <switch name="Juniper EX3200-24" serial="" hostname="switch0.example.com">
-  <name>Juniper EX3200-24</name>
-  <serial>123123123</serial>
   <open_port name="Open" color="#FFDEDEDE" />
   <vlans>
-    <vlan name="WAN" id="*" color="#FF9900" />
+    <vlan name="WAN" id="0" color="#FF9900" />
     <vlan name="Default-Trunk" id="1" color="#FF9900" />
   </vlans>
   <ports rows="2" cols="12" groups="2">
-    <port id="0" vlans="*">WAN Port to Router</port>
+    <port id="0" vlans="0">WAN Port to Router</port>
     <port id="1" vlans=""></port>
     <port id="2" vlans=""></port>
     <port id="3" vlans=""></port>
