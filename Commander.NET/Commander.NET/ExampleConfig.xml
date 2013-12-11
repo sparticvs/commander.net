@@ -1,10 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?> 
-<switch name="Juniper EX3200-24" serial="" hostname="">
+<switch name="Juniper EX3200-24" serial="" hostname="switch0.example.com">
   <name>Juniper EX3200-24</name>
   <serial>123123123</serial>
+  <open_port name="Open" color="#FFDEDEDE" />
   <vlans>
-    <!-- Default "open" Identifier -->
-    <vlan name="Open" id="" color="#FFDEDEDE" />
     <vlan name="WAN" id="*" color="#FF9900" />
     <vlan name="Default-Trunk" id="1" color="#FF9900" />
   </vlans>
