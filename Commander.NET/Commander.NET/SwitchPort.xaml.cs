@@ -43,6 +43,7 @@ namespace Commander.NET
             if (e.Vlans.Count > 0)
             {
                 this.portRect.Fill = new SolidColorBrush(e.Vlans[0].Color);
+                this.portRect.ToolTip = e.Vlans[0].Name;
             }
             else
             {
