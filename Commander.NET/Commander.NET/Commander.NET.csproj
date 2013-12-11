@@ -61,6 +61,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Port.cs" />
+    <Compile Include="PortBuilder.cs" />
     <Compile Include="SwitchPort.xaml.cs">
       <DependentUpon>SwitchPort.xaml</DependentUpon>
     </Compile>

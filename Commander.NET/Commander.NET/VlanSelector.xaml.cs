@@ -21,10 +21,19 @@ namespace Commander.NET
         // TODO: Name of VlanSelection should change to "Port Info" or something relating to the port
 
         public EventHandler<VlanSelectedEventArgs> OnSave { get; set; }
+        private Port portInfo;
 
-        public VlanSelector()
+        public VlanSelector(Port portInfo)
         {
+            this.portInfo = portInfo;
+
             InitializeComponent();
+
+            this.portDetails.Text = this.portInfo.Details;
+            foreach (Vlan v in this.portInfo.Vlans)
+            {
+                this.vlanLB.SelectedItems.Add(v);
+            }
         }
 
         public void SetVlans(List<Vlan> vlans)
@@ -37,13 +46,17 @@ namespace Commander.NET
 
         private void saveBtn_Click(object sender, RoutedEventArgs e)
         {
+            this.portInfo.Details = this.portDetails.Text;
+
             if (this.OnSave != null)
             {
                 VlanSelectedEventArgs args = new VlanSelectedEventArgs();
+                this.portInfo.Vlans.Clear();
                 foreach (Vlan v in this.vlanLB.SelectedItems)
                 {
-                    args.Vlans.Add(v);
+                    this.portInfo.Vlans.Add(v);
                 }
+                args.Port = this.portInfo;
                 this.OnSave(this, args);
             }
 

@@ -7,11 +7,10 @@ namespace Commander.NET
 {
     public class VlanSelectedEventArgs : EventArgs
     {
-        public List<Vlan> Vlans { get; set; }
+        public Port Port { get; set; }
 
         public VlanSelectedEventArgs()
         {
-            Vlans = new List<Vlan>();
         }
     }
 }

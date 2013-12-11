@@ -4,7 +4,7 @@
         Title="VlanSelector" Height="300" Width="227" WindowStyle="ToolWindow">
     <Grid>
         <ListBox x:Name="vlanLB" Margin="10,126,10,0" Height="100" VerticalAlignment="Top" SelectionMode="Multiple"/>
-        <TextBox Height="74" Margin="10,26,10,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top"/>
+        <TextBox x:Name="portDetails" Height="74" Margin="10,26,10,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top"/>
         <TextBlock HorizontalAlignment="Left" Margin="10,105,0,0" TextWrapping="Wrap" Text="VLAN Assignments" Height="16" VerticalAlignment="Top"/>
         <TextBlock HorizontalAlignment="Left" Margin="10,5,0,0" TextWrapping="Wrap" Text="Details" VerticalAlignment="Top"/>
         <Button x:Name="saveBtn" Content="Save" HorizontalAlignment="Left" Margin="134,243,0,0" VerticalAlignment="Top" Width="75" Click="saveBtn_Click"/>

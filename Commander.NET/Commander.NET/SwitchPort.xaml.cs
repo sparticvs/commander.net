@@ -19,15 +19,18 @@ namespace Commander.NET
     /// </summary>
     public partial class SwitchPort : UserControl
     {
+        private Port portInfo;
+
         public SwitchPort(int portId)
         {
+            this.portInfo = PortBuilder.buildPort(portId);
             InitializeComponent();
-            this.portId.Text = portId.ToString();
+            this.portId.Text = this.portInfo.Id.ToString();
         }
 
         private void Rectangle_MouseRightButtonUp(object sender, MouseButtonEventArgs e)
         {
-            VlanSelector selector = new VlanSelector();
+            VlanSelector selector = new VlanSelector(this.portInfo);
             selector.SetVlans(MainWindow.VLANS);
             selector.OnSave += this.HandleSaveEvent;
             selector.Show();
@@ -35,15 +38,18 @@ namespace Commander.NET
 
         private void Grid_ContextMenuOpening(object sender, ContextMenuEventArgs e)
         {
+            // Don't show context menu when right click on the port. That has a different action
             e.Handled = true;
         }
 
         private void HandleSaveEvent(object sender, VlanSelectedEventArgs e)
         {
-            if (e.Vlans.Count > 0)
+            this.portInfo = e.Port;
+
+            if (e.Port.Vlans.Count > 0)
             {
-                this.portRect.Fill = new SolidColorBrush(e.Vlans[0].Color);
-                this.portRect.ToolTip = e.Vlans[0].Name;
+                this.portRect.Fill = new SolidColorBrush(e.Port.Vlans[0].Color);
+                this.portRect.ToolTip = e.Port.Vlans[0].Name;
             }
             else
             {
