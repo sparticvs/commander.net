@@ -23,7 +23,7 @@ namespace Commander.NET
 
         public SwitchPort(int portId)
         {
-            this.portInfo = PortBuilder.buildPort(portId);
+            this.portInfo = PortFactory.buildPort(portId);
             InitializeComponent();
             this.portId.Text = this.portInfo.Id.ToString();
         }

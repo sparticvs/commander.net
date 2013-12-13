@@ -5,16 +5,16 @@ using System.Text;
 
 namespace Commander.NET
 {
-    public static class PortBuilder
+    public static class PortFactory
     {
         public static Port buildPort(int id)
         {
-            return PortBuilder.buildPort(id, null, "");
+            return PortFactory.buildPort(id, null, "");
         }
 
         public static Port buildPort(int id, List<Vlan> vlans)
         {
-            return PortBuilder.buildPort(id, vlans, "");
+            return PortFactory.buildPort(id, vlans, "");
         }
 
         public static Port buildPort(int id, List<Vlan> vlans, string detail)
@@ -33,7 +33,7 @@ namespace Commander.NET
         public static Port buildPort(string sId, string sDetail)
         {
             int id = int.Parse(sId);
-            return PortBuilder.buildPort(id, null, sDetail);
+            return PortFactory.buildPort(id, null, sDetail);
         }
     }
 }
