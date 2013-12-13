@@ -35,7 +35,7 @@ namespace Commander.NET
             nodes = doc.SelectNodes("/switch/ports");
             foreach (XmlNode n in nodes)
             {
-                Port p = PortFactory.buildPort(n.Attributes["id"].Value, n.InnerText);
+                Port p = PortFactory.createPort(n.Attributes["id"].Value, n.InnerText);
                 string[] vlan_ids = n.Attributes["vlans"].Value.Split(',');
 
                 foreach (string vid in vlan_ids)

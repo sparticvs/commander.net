@@ -7,17 +7,17 @@ namespace Commander.NET
 {
     public static class PortFactory
     {
-        public static Port buildPort(int id)
+        public static Port createPort(int id)
         {
-            return PortFactory.buildPort(id, null, "");
+            return PortFactory.createPort(id, null, "");
         }
 
-        public static Port buildPort(int id, List<Vlan> vlans)
+        public static Port createPort(int id, List<Vlan> vlans)
         {
-            return PortFactory.buildPort(id, vlans, "");
+            return PortFactory.createPort(id, vlans, "");
         }
 
-        public static Port buildPort(int id, List<Vlan> vlans, string detail)
+        public static Port createPort(int id, List<Vlan> vlans, string detail)
         {
             Port port = new Port();
             port.Details = detail;
@@ -30,10 +30,10 @@ namespace Commander.NET
             return port;
         }
 
-        public static Port buildPort(string sId, string sDetail)
+        public static Port createPort(string sId, string sDetail)
         {
             int id = int.Parse(sId);
-            return PortFactory.buildPort(id, null, sDetail);
+            return PortFactory.createPort(id, null, sDetail);
         }
     }
 }
