@@ -21,6 +21,8 @@ namespace Commander.NET
     {
         private Port portInfo;
 
+        public Port PortInfo { get { return this.portInfo; } }
+
         public SwitchPort(int portId)
         {
             this.portInfo = PortFactory.createPort(portId);
@@ -31,7 +33,7 @@ namespace Commander.NET
         private void Rectangle_MouseRightButtonUp(object sender, MouseButtonEventArgs e)
         {
             VlanSelector selector = new VlanSelector(this.portInfo);
-            selector.SetVlans(MainWindow.VLANS);
+            selector.SetVlans(MainWindow.CONFIG.Vlans);
             selector.OnSave += this.HandleSaveEvent;
             selector.Show();
         }
@@ -44,16 +46,35 @@ namespace Commander.NET
 
         private void HandleSaveEvent(object sender, VlanSelectedEventArgs e)
         {
-            this.portInfo = e.Port;
+            UpdateConfiguration(e.Port);
+            this.UpdatePortInfo(e.Port);
+        }
 
-            if (e.Port.Vlans.Count > 0)
+        /* TODO: Move this to Configuration */
+        public static void UpdateConfiguration(Port port)
+        {
+            foreach (Port p in MainWindow.CONFIG.Ports)
             {
-                this.portRect.Fill = new SolidColorBrush(e.Port.Vlans[0].Color);
-                this.portRect.ToolTip = e.Port.Vlans[0].Name;
+                if (port.Id == p.Id)
+                {
+                    p.Details = port.Details;
+                    p.Vlans = port.Vlans;
+                }
+            }
+        }
+
+        public void UpdatePortInfo(Port port)
+        {
+            this.portInfo = port;
+
+            if (this.portInfo.Vlans.Count > 0)
+            {
+                this.portRect.Fill = new SolidColorBrush(port.Vlans[0].Color);
+                this.portRect.ToolTip = port.Vlans[0].Name;
             }
             else
             {
-                this.portRect.Fill = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FFDEDEDE"));
+                this.portRect.Fill = new SolidColorBrush(MainWindow.CONFIG.OpenPortColor);
             }
         }
     }

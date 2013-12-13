@@ -24,7 +24,7 @@ namespace Commander.NET
             config.OpenPortName = node.Attributes["name"].Value;
             config.OpenPortColor = (Color)ColorConverter.ConvertFromString(node.Attributes["color"].Value);
 
-            XmlNodeList nodes = doc.SelectNodes("/switch/vlans");
+            XmlNodeList nodes = doc.SelectNodes("/switch/vlans/vlan");
             foreach (XmlNode n in nodes)
             {
                 config.Vlans.Add(VlanFactory.createVlan(n.Attributes["name"].Value,
@@ -32,7 +32,7 @@ namespace Commander.NET
                                                         n.Attributes["color"].Value));
             }
 
-            nodes = doc.SelectNodes("/switch/ports");
+            nodes = doc.SelectNodes("/switch/ports/port");
             foreach (XmlNode n in nodes)
             {
                 Port p = PortFactory.createPort(n.Attributes["id"].Value, n.InnerText);
@@ -40,6 +40,10 @@ namespace Commander.NET
 
                 foreach (string vid in vlan_ids)
                 {
+                    if (vid == string.Empty)
+                    {
+                        continue;
+                    }
                     int vlan_id = int.Parse(vid);
                     p.Vlans.Add(config.Vlans.Find(x => x.Id == vlan_id));
                 }

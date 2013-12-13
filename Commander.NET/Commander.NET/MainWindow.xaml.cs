@@ -49,10 +49,13 @@ namespace Commander.NET
             dlg.Filter = "XML config (.xml)|*.xml";
             bool? result = dlg.ShowDialog();
 
-            if (result == true)
+            if (result != true)
             {
-                string filename = dlg.FileName;
+                return;
             }
+
+            MainWindow.CONFIG = ConfigurationFactory.createConfigurationFromFile(dlg.FileName);
+            this.loadConfig();
         }
 
         private void saveConfig_Click(object sender, RoutedEventArgs e)
@@ -69,6 +72,18 @@ namespace Commander.NET
             }
             
             ConfigurationFactory.saveConfigurationToFile(dlg.FileName, MainWindow.CONFIG);
+        }
+
+        private void loadConfig()
+        {
+            /* TODO: This whole port thing needs to be fixed. Currently it can be imported out of
+             * order which breaks so many things.  This needs to be changed to a sorted list or a
+             * mapping between PortIds and PortInfo. */
+            
+            foreach (SwitchPort sp in switchPanel.Children)
+            {
+                sp.UpdatePortInfo(CONFIG.Ports.Find(x => x.Id == sp.PortInfo.Id));
+            }
         }
     }
 }
