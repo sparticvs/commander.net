@@ -25,13 +25,7 @@ namespace Commander.NET
 
         public MainWindow()
         {
-            CONFIG = new Configuration();
-            CONFIG.Vlans.Add(VlanFactory.createVlan("WAN", "0", "#FFC000"));
-            CONFIG.Vlans.Add(VlanFactory.createVlan("Default", "1", "#92D050"));
-            CONFIG.Vlans.Add(VlanFactory.createVlan("Internal", "2", "#00B0F0"));
-            CONFIG.Vlans.Add(VlanFactory.createVlan("External", "3", "brown"));
-            CONFIG.Vlans.Add(VlanFactory.createVlan("DMZ", "4", "#FF0000"));
-            CONFIG.Vlans.Add(VlanFactory.createVlan("Management", "254", "#E26B0A"));
+            CONFIG = ConfigurationFactory.createDefaultConfiguration();
 
             InitializeComponent();
 

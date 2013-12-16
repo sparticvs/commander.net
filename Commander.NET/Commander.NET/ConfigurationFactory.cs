@@ -9,6 +9,22 @@ namespace Commander.NET
 {
     public static class ConfigurationFactory
     {
+        public static Configuration createDefaultConfiguration()
+        {
+            Configuration config = new Configuration();
+
+
+            config.Vlans.Add(VlanFactory.createVlan("WAN", "0", "#FFC000"));
+            config.Vlans.Add(VlanFactory.createVlan("Default", "1", "#92D050"));
+            config.Vlans.Add(VlanFactory.createVlan("Internal", "2", "#00B0F0"));
+            config.Vlans.Add(VlanFactory.createVlan("External", "3", "brown"));
+            config.Vlans.Add(VlanFactory.createVlan("DMZ", "4", "#FF0000"));
+            config.Vlans.Add(VlanFactory.createVlan("Management", "254", "#E26B0A"));
+
+
+            return config;
+        }
+
         public static Configuration createConfigurationFromFile(string fileName)
         {
             Configuration config = new Configuration();
