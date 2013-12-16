@@ -14,12 +14,12 @@ namespace Commander.NET
         public string OpenPortName { get; set; }
         public Color OpenPortColor { get; set; }
         public List<Vlan> Vlans { get; set; }
-        public List<Port> Ports { get; set; }
+        public PortMap Ports { get; set; }
 
         public Configuration()
         {
             this.Vlans = new List<Vlan>();
-            this.Ports = new List<Port>();
+            this.Ports = new PortMap();
         }
     }
 }

@@ -64,7 +64,7 @@ namespace Commander.NET
                     p.Vlans.Add(config.Vlans.Find(x => x.Id == vlan_id));
                 }
 
-                config.Ports.Add(p);
+                config.Ports.Add(p.Id, p);
             }
 
             return config;
@@ -125,24 +125,24 @@ namespace Commander.NET
 
             XmlNode portsNode = doc.CreateElement("ports");
             // TODO: Handle rows, cols, and groups for UI
-            foreach (Port port in config.Ports)
+            foreach (int portId in config.Ports.Keys)
             {
                 XmlNode portNode = doc.CreateElement("port");
 
                 attr = doc.CreateAttribute("id");
-                attr.Value = port.Id.ToString();
+                attr.Value = portId.ToString();
                 portNode.Attributes.Append(attr);
 
                 attr = doc.CreateAttribute("vlans");
                 List<string> vlans = new List<string>();
-                foreach (Vlan v in port.Vlans)
+                foreach (Vlan v in config.Ports[portId].Vlans)
                 {
                     vlans.Add(v.Id.ToString());
                 }
                 attr.Value = string.Join(",", vlans);
                 portNode.Attributes.Append(attr);
 
-                portNode.InnerText = port.Details;
+                portNode.InnerText = config.Ports[portId].Details;
 
                 portsNode.AppendChild(portNode);
             }

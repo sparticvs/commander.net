@@ -53,14 +53,8 @@ namespace Commander.NET
         /* TODO: Move this to Configuration */
         public static void UpdateConfiguration(Port port)
         {
-            foreach (Port p in MainWindow.CONFIG.Ports)
-            {
-                if (port.Id == p.Id)
-                {
-                    p.Details = port.Details;
-                    p.Vlans = port.Vlans;
-                }
-            }
+            MainWindow.CONFIG.Ports[port.Id].Details = port.Details;
+            MainWindow.CONFIG.Ports[port.Id].Vlans = port.Vlans;
         }
 
         public void UpdatePortInfo(Port port)

@@ -65,6 +65,7 @@
     <Compile Include="ConfigurationFactory.cs" />
     <Compile Include="Port.cs" />
     <Compile Include="PortFactory.cs" />
+    <Compile Include="PortMap.cs" />
     <Compile Include="SwitchPort.xaml.cs">
       <DependentUpon>SwitchPort.xaml</DependentUpon>
     </Compile>
